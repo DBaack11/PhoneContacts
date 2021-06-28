@@ -54,7 +54,17 @@ namespace PhoneContacts
                 endpoints.MapControllerRoute(
                     name: "default",
                     pattern: "{controller=Home}/{action=Index}/{id?}");
+
+                endpoints.MapControllerRoute(
+                    name: "custom",
+                    pattern: "{controller=Home}/{action=CustomRouting}/Chapter6/{id?}");
+
+                endpoints.MapAreaControllerRoute(
+                    name: "admin",
+                    areaName: "Admin",
+                    pattern: "{controller=Home}/{action=Index}/{id?}");
             });
+
         }
     }
 }
